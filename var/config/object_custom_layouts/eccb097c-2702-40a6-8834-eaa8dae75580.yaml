@@ -1,0 +1,14 @@
+pimcore:
+    objects:
+        custom_layouts:
+            definitions:
+                eccb097c-2702-40a6-8834-eaa8dae75580:
+                    id: eccb097c-2702-40a6-8834-eaa8dae75580
+                    name: Panel
+                    description: ''
+                    creationDate: 1695810475
+                    modificationDate: 1695810475
+                    userOwner: 2
+                    classId: '1'
+                    layoutDefinitions: null
+                    default: 0
