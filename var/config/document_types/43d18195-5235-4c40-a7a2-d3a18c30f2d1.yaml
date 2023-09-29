@@ -1,0 +1,14 @@
+pimcore:
+    documents:
+        doc_types:
+            definitions:
+                43d18195-5235-4c40-a7a2-d3a18c30f2d1:
+                    name: 'Add Contents'
+                    group: ''
+                    controller: null
+                    template: null
+                    type: page
+                    priority: 0
+                    creationDate: 1695974940
+                    modificationDate: 1695975175
+                    staticGeneratorEnabled: false
