@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'layout.html.twig' %}
 
 {% block content %}
@@ -7,4 +8,15 @@
         <h2>{{ pimcore_input('subline') }}</h2>
         {{ pimcore_wysiwyg('content') }}
     {% endfor %}
+=======
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>{{ pimcore_input("headline", {"width": 540}) }}</h1>
+
+    {% for i in pimcore_iterate_block(pimcore_block('contentblock')) %}
+        <h2>{{ pimcore_input('subline') }}</h2>
+        {{ pimcore_wysiwyg('content') }}
+    {% endfor %}
+>>>>>>> 538ce99... object commit
 {% endblock %}

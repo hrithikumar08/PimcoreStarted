@@ -1,0 +1,35 @@
+{% extends 'trafficheader.html.twig' %}
+
+{% block body %}
+	{% block content %}
+
+        <h2 class="text-primary">Traffic Alerts using Object Bricks</h2>
+		{# alert is my objectbrick entended in class ,from object brick defintion #}
+		{% for trafficAlert in tadata.alert.items %}
+			<div class="traffic-alert">
+				<h3>{{ trafficAlert.traffic_type }}</h3>
+				<p>
+					<b>Location:</b>
+					{{ trafficAlert.location }}</p>
+				<p>
+					<b>Severity:</b>
+					{{ trafficAlert.severity }}</p>
+				<p>
+					<b>Start Time:</b>
+					{{ trafficAlert.start_time }}</p>
+				<p>
+					<b>End Time:</b>
+					{{ trafficAlert.end_time }}</p>
+			</div>
+		{% endfor %}
+
+		<h2 class="text-primary">Traffic Information using Classification Store</h2>
+		<ul>
+			{% for info in infoClassification %}
+				<li><b>{{ info.key }}:</b>
+					{{ info.value }}</li>
+			{% endfor %}
+		</ul>
+
+	{% endblock %}
+{% endblock %}

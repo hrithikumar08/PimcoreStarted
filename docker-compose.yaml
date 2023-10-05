@@ -21,8 +21,13 @@ services:
             test: [ "CMD-SHELL", "mysql -h db -u$$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE -e 'SHOW TABLES;'" ]
             interval: 10s
             retries: 6
+<<<<<<< HEAD
             start_period: 2m
             timeout: 5s
+=======
+            start_period: 1m
+            timeout: 3s
+>>>>>>> 538ce99... object commit
 
     nginx:
         image: nginx:stable-alpine
