@@ -1,0 +1,257 @@
+{% extends 'trafficheader.html.twig' %}
+
+{% block body %}
+	{% block content %}
+		<div class="row">
+			<div class="mx-auto">
+				{{ pimcore_image("tlogo", { "title": "Logo Image", "width": 100, "height": 100 }) }}
+			</div>
+		</div>
+
+		<h2>{{ pimcore_input("feedbackform") }}</h2>
+		{{ pimcore_select("valid_for", {
+"store": [
+["1", "Get Challan"],
+["2", "Inquiry"],
+["3", "Challan Status"]
+],
+"defaultValue" : "Select"
+}) }}
+		<p class="feeds">
+			{{ pimcore_textarea("feedback_form",{
+	"nl2br": true,
+	"height": 300,
+	"placeholder": "Give Feedback"
+	}) }}
+		</p>
+		{{ pimcore_date('myDate', {
+'format': 'd.m.Y',
+'outputFormat': '%d.%m.%Y'
+})
+}}
+
+
+		<section id="campaign_video">
+			{{ pimcore_video('campaignVideo', {
+	width: 700,
+	height: 400
+	}) }}
+		</section>
+
+
+		{# {% set block = pimcore_block('gridblock', {'manual' : true, 'limit' : 6}).start() %}
+		<table>
+			<tr>
+				{% for b in block.iterator %}
+				{% do block.blockConstruct() %}
+				<td customattribute="{{ pimcore_input(" myInput").getData() }}">
+					{% do block.blockStart() %}
+					<div style="width:200px; height:200px;border:1px solid black;">
+						{{ pimcore_input("myInput") }}
+					</div>
+					{% do block.blockEnd() %}
+				</td>
+				{% do block.blockDestruct() %}
+				{% endfor %}
+			</tr>
+		</table>
+		{% do block.end() %} #}
+
+		{{ pimcore_multiselect('challanCategory', {
+'width': 200,
+'height': 100,
+'store': [
+['1', 'Bike Challan'],
+['2', 'Car Challan'],
+['3', 'Truck Challan'],
+]
+}) }}
+
+		{{ pimcore_numeric('myNumber') }}
+
+
+		{{ pimcore_snippet("mySnippet", {"width": 250, "height": 100}) }}
+
+		{{ pimcore_table("productProperties", {
+"width": 700,
+"height": 400,
+"defaults": {
+"cols": 2,
+"rows": 3,
+}
+})
+}}
+
+		<h2>
+			{{ pimcore_input("scheduleblock") }}
+		</h2>
+		{# {{ pimcore_scheduledblock("scheduleblock") }} #}
+
+		{# {% for i in pimcore_scheduledblock('block').iterator %} #}
+		{# <h2>{{ pimcore_input('blockinput') }}</h2>
+		{{ pimcore_image('myimage') }} #}
+		{# {% endfor %} #}
+
+			<h3>
+		{{ pimcore_input("pdfeditable") }}
+		</h3>
+			<div class="pdf"> {{ pimcore_pdf("newPdf", {"width": 640}) }}
+		</div>
+
+		<h3>
+			{{ pimcore_input("embedsocialwidgets") }}
+		</h3>
+
+		{{ pimcore_embed("socialWidgets") }}
+
+		<h3>
+			{{ pimcore_input("checkboxfortermsandconditions") }}
+		</h3>
+
+		I Agree:
+		{{ pimcore_checkbox('myCheckbox') }}
+
+		{# {{ pimcore_checkbox('myCheckbox') }}
+		
+		{% if pimcore_checkbox('myCheckbox').isChecked() %}
+		
+		{% endif %} #}
+
+		{# <h3>
+			{{ pimcore_input("navigation") }}
+		</h3> #}
+
+		{# {% set nav = pimcore_build_nav({active: activeDocument, root: navigationRootDocument}) %} #}
+		{# {{ pimcore_render_nav("mkm") }} #}
+
+		{# <h3>
+			{{ pimcore_input("areablock") }}
+		</h3>
+		{{ pimcore_relation("myRelation") }} #}
+
+		{# {% set navbar = [] %}
+		
+		{% set home = pimcore_document(8) %}
+		{% set complaints = pimcore_document(9) %}
+		{% set aboutus = pimcore_document(10) %}
+		{% set blog = pimcore_document(11) %}
+		
+		{% for section in [home, complaints, aboutus, blog] %}
+		{% set navbars = {
+		'uri': section.getFullPath(),
+		'label': section.getProperty('navigation_name'),
+		'title': section.getProperty('navigation_title'),
+		'active': document.id == section.id
+		} %}
+		{% set navbar = navbar|merge([navbars]) %}
+		{% endfor %} #}
+
+		{# <nav>
+			<ul>
+				{% for menuItem in pimcore_list("NavigationItem") %}
+				<li><a href="{{ menuItem.getLink }}">{{ menuItem.getLabel }}</a></li>
+				{% endfor %}
+			</ul>
+		</nav> #}
+
+			<h3>
+		{{ pimcore_input("blocks") }}
+		</h3>
+			{% if blockClass is iterable %}
+				<ul>
+					{% for bfields in blockClass %}
+					<br>
+						<li>
+							<strong>
+						Title:
+						</strong>
+						{{ bfields['title'].data }}
+						<br>
+							<strong>
+						Number:
+						</strong>
+						{{ bfields['number'].data }}
+							<strong>
+						Email:
+						</strong>
+					{{ bfields['email'].data }}
+					<strong>
+						Location:
+						</strong>
+					{{ bfields['location'].data }}
+					<strong>
+						Office:
+						</strong>
+					{{ bfields['office'].data }}
+				</li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>Block not created</p>
+		{% endif %}
+
+		{# field collection #}
+		{# {% if challans is iterable %}
+		<ul>
+			{% for fields in challans %}
+			<br>
+			<li>
+				<strong>Title:</strong>
+				{{ fields['firstname'].data }}
+				<br>
+				<strong>Number:</strong>
+				{{ fields['lastname'].data }}
+				<strong>Email:</strong>
+				{{ fields['challandate'].data }}
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>Challan not found</p>
+		{% endif %} #}
+		<h3>
+			{{ pimcore_input("field-collections") }}
+		</h3>
+		{% if challan.cfields is not null %}
+			{% for citems in challan.cfields.items %}
+				<li>
+					<strong>
+						FirstName:
+					</strong>
+					{{ citems.firstname }}
+				</li>
+				<li>
+					<strong>
+						LastName:
+					</strong>
+					{{ citems.Lastname }}
+				</li>
+				<li>
+					<strong>
+						ChallanDate:
+					</strong>
+					{{ citems.challandate }}
+				</li>
+				<li>
+					<strong>
+						ChallanImage:
+					</strong>
+					{{ citems.challanimage }}
+				</li>
+				<li>
+					<strong>
+						ChallanNumber:
+					</strong>
+					{{ citems.challannumber }}
+				</li>
+
+			{% endfor %}
+		{% else %}
+			<p>Challan not found</p>
+		{% endif %}
+
+
+
+
+	{% endblock %}
+{% endblock %}
