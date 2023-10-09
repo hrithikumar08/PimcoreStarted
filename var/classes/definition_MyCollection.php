@@ -5,17 +5,16 @@
  * Variants: no
  *
  * Fields Summary:
- * - cfields [fieldcollections]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '3',
-   'name' => 'challandetails',
+   'id' => 'collect',
+   'name' => 'MyCollection',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696414427,
+   'modificationDate' => 1696848260,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -59,34 +58,28 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
-             'name' => 'cfields',
-             'title' => 'Cfields',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
+          \Pimcore\Model\DataObject\ClassDefinition\Layout\Text::__set_state(array(
+             'name' => 'customText',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => '',
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => '',
+             'datatype' => 'layout',
+             'children' => 
+            array (
+            ),
              'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
             ),
-             'allowedTypes' => 
-            array (
-              0 => 'contactinformation',
-            ),
-             'lazyLoading' => true,
-             'maxItems' => NULL,
-             'disallowAddRemove' => false,
-             'disallowReorder' => false,
-             'collapsed' => false,
-             'collapsible' => false,
+             'fieldtype' => 'text',
+             'html' => 'hghg',
+             'renderingClass' => '@App\\Helpers\\CustomRenderer',
+             'renderingData' => 'Show Some Addition Data',
              'border' => false,
           )),
         ),

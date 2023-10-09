@@ -1,14 +1,24 @@
 <?php
 
 /**
+<<<<<<< HEAD
  * Inheritance: no
  * Variants: no
+=======
+ * Inheritance: yes
+ * Variants: yes
+>>>>>>> 1341aa1... Additonal Objects Commit
  *
  * Fields Summary:
  * - sku [input]
  * - name [input]
  * - description [wysiwyg]
  * - picture [image]
+<<<<<<< HEAD
+=======
+ * - localizedfields [localizedfields]
+ * -- firstA [input]
+>>>>>>> 1341aa1... Additonal Objects Commit
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -18,7 +28,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
+<<<<<<< HEAD
    'modificationDate' => 1695892456,
+=======
+   'modificationDate' => 1696855927,
+>>>>>>> 1341aa1... Additonal Objects Commit
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -30,8 +44,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' => 
   array (
   ),
+<<<<<<< HEAD
    'allowInherit' => false,
    'allowVariants' => false,
+=======
+   'allowInherit' => true,
+   'allowVariants' => true,
+>>>>>>> 1341aa1... Additonal Objects Commit
    'showVariants' => false,
    'layoutDefinitions' => 
   \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
@@ -169,6 +188,100 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
              'height' => '',
           )),
+<<<<<<< HEAD
+=======
+          4 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Layout\Iframe::__set_state(array(
+             'name' => 'iframe',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => '',
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => NULL,
+             'datatype' => 'layout',
+             'children' => 
+            array (
+            ),
+             'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'fieldtype' => 'iframe',
+             'iframeUrl' => '/tshirts/',
+             'renderingData' => '',
+          )),
+          5 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
+             'name' => 'localizedfields',
+             'title' => '',
+             'tooltip' => NULL,
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => NULL,
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => true,
+             'visibleSearch' => true,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'children' => 
+            array (
+              0 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'name' => 'firstA',
+                 'title' => 'First A',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'defaultValue' => NULL,
+                 'columnLength' => 190,
+                 'regex' => '',
+                 'regexFlags' => 
+                array (
+                ),
+                 'unique' => false,
+                 'showCharCount' => false,
+                 'width' => '',
+                 'defaultValueGenerator' => '',
+              )),
+            ),
+             'region' => NULL,
+             'layout' => NULL,
+             'maxTabs' => NULL,
+             'border' => false,
+             'provideSplitView' => false,
+             'tabPosition' => 'top',
+             'hideLabelsWhenTabsReached' => NULL,
+             'referencedFields' => 
+            array (
+            ),
+             'permissionView' => NULL,
+             'permissionEdit' => NULL,
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
+             'fieldDefinitionsCache' => NULL,
+          )),
+>>>>>>> 1341aa1... Additonal Objects Commit
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -197,7 +310,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'group' => '',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
+<<<<<<< HEAD
    'previewGeneratorReference' => '',
+=======
+   'previewGeneratorReference' => '@App\\Service\\PreviewParamProvider\\ProductPreviewParamProvider',
+>>>>>>> 1341aa1... Additonal Objects Commit
    'compositeIndices' => 
   array (
   ),

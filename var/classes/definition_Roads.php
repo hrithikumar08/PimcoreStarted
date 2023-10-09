@@ -5,20 +5,19 @@
  * Variants: no
  *
  * Fields Summary:
- * - sku [input]
- * - name [input]
- * - description [wysiwyg]
- * - picture [image]
+ * - roadid [numeric]
+ * - roadName [input]
+ * - roadType [select]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '1',
-   'name' => 'product',
+   'id' => 'roadsrelation',
+   'name' => 'Roads',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696356567,
+   'modificationDate' => 1696590161,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -49,7 +48,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     array (
       0 => 
       \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'name' => 'Layout',
+         'name' => 'Roads',
          'type' => NULL,
          'region' => NULL,
          'title' => '',
@@ -62,9 +61,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'sku',
-             'title' => 'Sku',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'roadid',
+             'title' => 'Roadid',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -81,20 +80,20 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
              'unique' => false,
-             'showCharCount' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'width' => '',
              'defaultValueGenerator' => '',
           )),
           1 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'name',
-             'title' => 'Name',
+             'name' => 'roadName',
+             'title' => 'Road Name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -122,9 +121,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           2 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
-             'name' => 'description',
-             'title' => 'Description',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'roadType',
+             'title' => 'Road Type',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -140,34 +139,31 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'toolbarConfig' => '',
-             'excludeFromSearchIndex' => false,
-             'maxCharacters' => '',
-             'height' => '',
-             'width' => '',
-          )),
-          3 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'picture',
-             'title' => 'Picture',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
+             'options' => 
             array (
+              0 => 
+              array (
+                'key' => 'Highway',
+                'value' => 'Highway',
+              ),
+              1 => 
+              array (
+                'key' => 'Service Road',
+                'value' => 'Service Road',
+              ),
+              2 => 
+              array (
+                'key' => 'Local Road',
+                'value' => 'Local Road',
+              ),
             ),
-             'uploadPath' => '',
+             'defaultValue' => 'Local road',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
              'width' => '',
-             'height' => '',
           )),
         ),
          'locked' => false,

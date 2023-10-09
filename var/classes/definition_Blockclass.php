@@ -12,16 +12,17 @@
  * -- location [geopoint]
  * -- office [image]
  * -- structtable [structuredTable]
+ * - consent [consent]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
    'id' => '2',
-   'name' => 'blockclass',
+   'name' => 'Blockclass',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696421100,
+   'modificationDate' => 1696831872,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -293,6 +294,28 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'fieldDefinitionsCache' => NULL,
+          )),
+          1 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Consent::__set_state(array(
+             'name' => 'consent',
+             'title' => 'Consent',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'defaultValue' => 0,
+             'width' => '',
           )),
         ),
          'locked' => false,
