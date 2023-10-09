@@ -129,12 +129,12 @@
 		</h3>
 		{{ pimcore_relation("myRelation") }} #}
 
-		{# {% set navbar = [] %}
+		{% set navbar = [] %}
 		
-		{% set home = pimcore_document(8) %}
-		{% set complaints = pimcore_document(9) %}
-		{% set aboutus = pimcore_document(10) %}
-		{% set blog = pimcore_document(11) %}
+		{% set home = pimcore_document(11) %}
+		{% set complaints = pimcore_document(12) %}
+		{% set aboutus = pimcore_document(17) %}
+		{% set blog = pimcore_document(13) %}
 		
 		{% for section in [home, complaints, aboutus, blog] %}
 		{% set navbars = {
@@ -143,8 +143,9 @@
 		'title': section.getProperty('navigation_title'),
 		'active': document.id == section.id
 		} %}
+		
 		{% set navbar = navbar|merge([navbars]) %}
-		{% endfor %} #}
+		{% endfor %}
 
 		{# <nav>
 			<ul>

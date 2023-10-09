@@ -62,6 +62,15 @@ services:
 
 
     # Example custom templating helper
+    App\Helpers\CustomRenderer:
+        public: true
+    
+    App\Website\LinkGenerator\ProductLinkGenerator:
+        public: true
+
+    App\Service\PreviewParamProvider\ProductPreviewParamProvider:
+        public: true
+        
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they
     #     # are fetched from the container on demand
