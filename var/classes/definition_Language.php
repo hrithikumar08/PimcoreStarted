@@ -3,21 +3,20 @@
 /**
  * Inheritance: no
  * Variants: no
- * Title: Home
  *
  * Fields Summary:
- * - TestOne [input]
- * - TestTwo [input]
+ * - localizedfields [localizedfields]
+ * -- challanDescription [wysiwyg]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => 'home',
-   'name' => 'home',
-   'title' => 'Home',
+   'id' => 'langs',
+   'name' => 'Language',
+   'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1697029894,
+   'modificationDate' => 1697021223,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -48,7 +47,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     array (
       0 => 
       \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'name' => 'Layout',
+         'name' => 'Panel',
          'type' => NULL,
          'region' => NULL,
          'title' => '',
@@ -61,64 +60,67 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'TestOne',
-             'title' => 'Test One',
-             'tooltip' => '',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
+             'name' => 'localizedfields',
+             'title' => 'DifferentLanguage',
+             'tooltip' => NULL,
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => true,
-             'style' => '',
+             'locked' => false,
+             'style' => NULL,
              'permissions' => NULL,
              'fieldtype' => '',
              'relationType' => false,
              'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
+             'visibleGridView' => true,
+             'visibleSearch' => true,
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
+             'children' => 
+            array (
+              0 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
+                 'name' => 'challanDescription',
+                 'title' => 'Challan Description',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'toolbarConfig' => '',
+                 'excludeFromSearchIndex' => false,
+                 'maxCharacters' => '',
+                 'height' => '',
+                 'width' => '',
+              )),
+            ),
+             'region' => NULL,
+             'layout' => NULL,
+             'maxTabs' => NULL,
+             'border' => false,
+             'provideSplitView' => false,
+             'tabPosition' => 'top',
+             'hideLabelsWhenTabsReached' => NULL,
+             'referencedFields' => 
             array (
             ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          1 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'TestTwo',
-             'title' => 'Test Two',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => true,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
+             'permissionView' => NULL,
+             'permissionEdit' => NULL,
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
+             'fieldDefinitionsCache' => NULL,
           )),
         ),
          'locked' => false,

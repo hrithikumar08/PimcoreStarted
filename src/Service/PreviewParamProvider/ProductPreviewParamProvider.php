@@ -9,48 +9,6 @@ use Pimcore\Model\DataObject\ClassDefinition\Data;
 
 class ProductPreviewParamProvider implements PreviewGeneratorInterface
 {
-    // protected ProductLinkGenerator $productLinkGenerator;
-
-    // public function __construct(ProductLinkGenerator $productLinkGenerator)
-    // {
-    //     $this->productLinkGenerator = $productLinkGenerator;
-    // }
-
-    // public function generatePreviewUrl(Concrete $object, array $params): string
-    // {
-    //     // Customize this method to generate the preview URL based on your product class fields and parameters.
-    //     // Example: Get values from object fields and add them to the additionalParams array.
-    //     $additionalParams = [
-    //         'sku' => $object->getSku(),
-    //         'name' => $object->getName(),
-    //     ];
-
-    //     // Merge additional parameters from $params array, if needed.
-    //     $additionalParams = array_merge($additionalParams, $params);
-
-    //     // Use the ProductLinkGenerator to generate the URL.
-    //     return $this->productLinkGenerator->generate($object, $additionalParams);
-    // }
-
-    // public function getPreviewConfig(Concrete $object): array
-    // {
-    //     // Customize this method to define the preview configuration based on your product class fields.
-    //     // Example: Define parameters for preview configuration.
-    //     return [
-    //         [
-    //             'name' => 'sku',
-    //             'label' => 'SKU',
-    //             // 'type' => Data::TYPE_TEXT,
-    //         ],
-    //         [
-    //             'name' => 'name',
-    //             'label' => 'Name',
-    //             // 'type' => Data::TYPE_TEXT,
-    //         ],
-    //         // Add more parameters as needed.
-    //     ];
-    // }
-
 
     protected ProductLinkGenerator $productLinkGenerator;
 

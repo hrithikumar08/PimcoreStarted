@@ -29,10 +29,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'description' => '',
    'creationDate' => NULL,
 <<<<<<< HEAD
+<<<<<<< HEAD
    'modificationDate' => 1695892456,
 =======
    'modificationDate' => 1696855927,
 >>>>>>> 1341aa1... Additonal Objects Commit
+=======
+   'modificationDate' => 1697001988,
+>>>>>>> 7200d17... With Assests and Translation
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -309,10 +313,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'icon' => '',
    'group' => '',
    'showAppLoggerTab' => false,
+<<<<<<< HEAD
    'linkGeneratorReference' => '',
 <<<<<<< HEAD
    'previewGeneratorReference' => '',
 =======
+=======
+   'linkGeneratorReference' => '@App\\Website\\LinkGenerator\\ProductLinkGenerator',
+>>>>>>> 7200d17... With Assests and Translation
    'previewGeneratorReference' => '@App\\Service\\PreviewParamProvider\\ProductPreviewParamProvider',
 >>>>>>> 1341aa1... Additonal Objects Commit
    'compositeIndices' => 

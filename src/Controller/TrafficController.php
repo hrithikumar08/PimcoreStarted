@@ -9,22 +9,27 @@ use Pimcore\Model\DataObject\Blockclass;
 use Pimcore\Model\DataObject\Product;
 use Pimcore\Model\DataObject\ClassDefinition;
 use Pimcore\Model\DataObject\ClassDefinition\Data\Field\Text;
-use Pimcore\Model\DataObject\Challandetails;
+use Pimcore\Model\DataObject\ChallanDetails;
 use Pimcore\Model\DataObject\Trafficalert;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Pimcore\Model\Asset;
+use Pimcore\Model\Document;
+use Pimcore\Model\Asset\Listing;
 
 class TrafficController extends FrontendController
 {
-
+    #[Route('/homes')]
     public function trafficAction(Request $request): Response
     {
+        // $language = $this->getRequest()->getLocale();
 
         $blockObject = Blockclass::getById(3);
         $blockClass = $blockObject->getBlock();
 
-        $challan = Challandetails::getById(4);
+        $challan = ChallanDetails::getById(4);
 
         return $this->render('traffic/frontpage.html.twig', [
             'blockClass' => $blockClass,
@@ -71,6 +76,17 @@ class TrafficController extends FrontendController
     #[Route('/apis')]
     public function traffiApi(Request $request): Response
     {
+        //  // The asset path you want to restrict access to
+        //  $restrictedAssetPath = "/Product/challan.png";
+
+        //  // Get the path of the requested URL
+        //  $requestPath = $request->getPathInfo();
+ 
+        //  // Check if the requested path matches the restricted asset path
+        //  if ($requestPath === $restrictedAssetPath) {
+        //      // If it's a direct request to the restricted asset, throw an AccessDeniedHttpException.
+        //      throw new AccessDeniedHttpException('Access denied.');
+        //  }
 
         $blockdata = Blockclass::getById(5);
 
@@ -81,6 +97,43 @@ class TrafficController extends FrontendController
             $field->setLocked(true);
         }
         $class->save();
+
+        // //creating and saving new asset
+        // $newAsset = new \Pimcore\Model\Asset();
+        // $newAsset->setFilename("google-logo.png");
+        // $newAsset->setData(file_get_contents("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"));
+        // // $newAsset->setData(file_get_contents("/home/All Codes/Assests/images/pimcorelogo.png"));
+        // $newAsset->setParent(\Pimcore\Model\Asset::getByPath("/"));
+        // $newAsset->save();
+
+        //getting assets
+        // $asset1 = Asset::getById(11);
+        // if ($asset1 != null) {
+        //     $asset1->delete();
+        // }
+
+        $videoAsset = Asset\Video::getById(13);
+            // echo $asset . '<br>';
+            // Do something with the asset
+        
+
+        $assetDoc = Asset::getById(14);
+        if($assetDoc instanceof Asset\Document) {
+        //  echo "helo"; 
+
+        //    // get a thumbnail of the first page, resized to the configuration of "myThumbnail"
+        //    echo $assetDoc->getImageThumbnail("image_transform");
+             $thumbnailUrl = $assetDoc->getImageThumbnail('image_transform');
+            //  echo  $thumbnailUrl;
+           // get the thumbnail URL for all pages, but do not generate them immediately (see third parameter) - the thumbnails are then generated on request
+        //    $thumbnailUrls = [];
+        //    for($i=1; $i<=$assetDoc->getPageCount(); $i++) {
+        //       $thumbnailUrls[] = $assetDoc->getImageThumbnail("image_transform", $i, true);
+        //    }
+        }
+         
+        
+
 
         // // Create a new object
         // $objectKey = 'customobject';
@@ -143,20 +196,29 @@ class TrafficController extends FrontendController
         // Save the object to persist the changes
         // $myObject->save();
 
-        // dump($myObject);
-        // exit;
+        // in your controller / action
+        // $locale = $request->getLocale(); 
+        //or 
+        // $language = $this->document->getProperty("language");
+        
+        // any document
+        // $doc = Document::getById(3);
+        // $language = $doc->getProperty("language");
+        // dump($doc);
+
 
         return $this->render('apis/actions.html.twig', [
             'blockdata' => $blockdata,
+            'video' => $videoAsset,
+            'thumbnailUrl' => $thumbnailUrl,
         ]);
 
     }
 
     // external system interaction 
     #[Route('/products/tshirt/{sku}/{name}')]
-    public function previewGenerator(Request $request, string $sku,string $name ): Response
+    public function previewGenerator(Request $request, string $sku, string $name): Response
     {
-        
 
         return $this->render('linkgenerate/testing.html.twig', [
             'sku' => $sku,
@@ -165,28 +227,6 @@ class TrafficController extends FrontendController
 
 
     }
-    
-    
-    // #[Route('/brick_traffic')]
-    // public function csvExport(Request $request): Response
-    // {
-    //     // $file = fopen("export.csv", "w");
-
-    //     // $entries = new DataObject\Blockclass\Listing();
-    //     // $entries->setCondition("name LIKE ?", "%bernie%");
-
-    //     // foreach ($entries as $entry) {
-    //     //     fputcsv($file, [
-    //     //         'id' => $entry->getId(),
-    //     //         'name' => $entry->getName()
-    //     //     ]);
-    //     // }
-
-    //     // fclose($file);
-
-    // }
-
-
 
 
 
