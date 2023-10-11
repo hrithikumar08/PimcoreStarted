@@ -33,4 +33,5 @@ class ProductLinkGenerator implements LinkGeneratorInterface
         return strtolower('tshirt/' . $sku . '/'. $name);
         // . Text::toUrl($name)
     }
+    // 
 }

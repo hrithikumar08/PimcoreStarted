@@ -2,8 +2,35 @@
 
 {% block body %}
 	{% block content %}
-    
-    <p>Custom Codes</p>
-    
+
+		<p>Custom Codes</p>
+		<h2>
+			{{ pimcore_input("image_assests") }}
+		</h2>
+
+		{% set image = pimcore_asset(12) %}
+		<img
+		src="{{ image.thumbnail('image_transform') }}">
+		{# {{ image.thumbnail('image_transform').html|raw }} #}
+	
+		<h2>{{ pimcore_input("Video") }}</h2>
+		
+		{% if video %}
+			<video controls width="300" poster="{{ video.getThumbnail('test_video') }}">
+			</video>
+		{% else %}
+			<p>Video not found.</p>
+		{% endif %}
+
+		
+		<h3>Document Thumbnail</h3>
+		{% if thumbnailUrl %}
+			<img src="{{ thumbnailUrl }}" alt="Thumbnail">
+		{% else %}
+			<p>Thumbnail not found.</p>
+		{% endif %}
+
+
+
 	{% endblock %}
 {% endblock %}

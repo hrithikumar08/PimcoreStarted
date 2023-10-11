@@ -4,7 +4,6 @@
 	{% block content %}
 
         <h2 class="text-primary">Traffic Alerts using Object Bricks</h2>
-		{# alert is my objectbrick entended in class ,from object brick defintion #}
 		{% for trafficAlert in tadata.alert.items %}
 			<div class="traffic-alert">
 				<h3>{{ trafficAlert.traffic_type }}</h3>
