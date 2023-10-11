@@ -8,64 +8,70 @@
 			</div>
 		</div>
 
+		{# Set the root node for navigation, fall back to a default if needed #}
+		{% set navStartNode = document.getProperty('navigationRoot') is instanceof('\\Pimcore\\Model\\Document\\Page') ? document.getProperty('navigationRoot') : pimcore_document(16) %}
+
+		{% set mainNavigation = pimcore_build_nav({
+		active: document,
+		root: navStartNode
+		}) %}
+		{# {{ dump(mainNavigation) }} #}
+
+		<nav class="navbar-expand-lg navbar navbar-dark bg-primary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">BLR POLICE</a>
+				<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						{% for navItem in mainNavigation %}
+							<a class="nav-link" href="{{ navItem.uri }}" target="_blank" style="text-transform: uppercase;">{{ navItem.label }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</nav>
+
+
 		<h2>{{ pimcore_input("feedbackform") }}</h2>
 		{{ pimcore_select("valid_for", {
-"store": [
-["1", "Get Challan"],
-["2", "Inquiry"],
-["3", "Challan Status"]
-],
-"defaultValue" : "Select"
-}) }}
+				"store": [
+				["1", "Get Challan"],
+				["2", "Inquiry"],
+				["3", "Challan Status"]
+				],
+				"defaultValue" : "Select"
+		}) }}
+
 		<p class="feeds">
 			{{ pimcore_textarea("feedback_form",{
-	"nl2br": true,
-	"height": 300,
-	"placeholder": "Give Feedback"
-	}) }}
+				"nl2br": true,
+				"height": 300,
+				"placeholder": "Give Feedback"
+				}) }}
 		</p>
 		{{ pimcore_date('myDate', {
-'format': 'd.m.Y',
-'outputFormat': '%d.%m.%Y'
-})
-}}
-
-
+			'format': 'd.m.Y',
+			'outputFormat': '%d.%m.%Y'
+			})
+			}}
 		<section id="campaign_video">
 			{{ pimcore_video('campaignVideo', {
-	width: 700,
-	height: 400
-	}) }}
+				width: 700,
+				height: 400
+				}) }}
 		</section>
 
-
-		{# {% set block = pimcore_block('gridblock', {'manual' : true, 'limit' : 6}).start() %}
-		<table>
-			<tr>
-				{% for b in block.iterator %}
-				{% do block.blockConstruct() %}
-				<td customattribute="{{ pimcore_input(" myInput").getData() }}">
-					{% do block.blockStart() %}
-					<div style="width:200px; height:200px;border:1px solid black;">
-						{{ pimcore_input("myInput") }}
-					</div>
-					{% do block.blockEnd() %}
-				</td>
-				{% do block.blockDestruct() %}
-				{% endfor %}
-			</tr>
-		</table>
-		{% do block.end() %} #}
-
 		{{ pimcore_multiselect('challanCategory', {
-'width': 200,
-'height': 100,
-'store': [
-['1', 'Bike Challan'],
-['2', 'Car Challan'],
-['3', 'Truck Challan'],
-]
-}) }}
+			'width': 200,
+			'height': 100,
+			'store': [
+			['1', 'Bike Challan'],
+			['2', 'Car Challan'],
+			['3', 'Truck Challan'],
+			]
+			}) }}
 
 		{{ pimcore_numeric('myNumber') }}
 
@@ -73,24 +79,24 @@
 		{{ pimcore_snippet("mySnippet", {"width": 250, "height": 100}) }}
 
 		{{ pimcore_table("productProperties", {
-"width": 700,
-"height": 400,
-"defaults": {
-"cols": 2,
-"rows": 3,
-}
-})
-}}
+			"width": 700,
+			"height": 400,
+			"defaults": {
+			"cols": 2,
+			"rows": 3,
+			}
+			})
+			}}
 
 		<h2>
 			{{ pimcore_input("scheduleblock") }}
 		</h2>
-		{# {{ pimcore_scheduledblock("scheduleblock") }} #}
+		{# {{ pimcore_scheduledblock("scheduleblock") }}
 
-		{# {% for i in pimcore_scheduledblock('block').iterator %} #}
-		{# <h2>{{ pimcore_input('blockinput') }}</h2>
-		{{ pimcore_image('myimage') }} #}
-		{# {% endfor %} #}
+		{% for i in pimcore_scheduledblock('block').iterator %}
+		<h2>{{ pimcore_input('blockinput') }}</h2>
+								{{ pimcore_image('myimage') }}
+		{% endfor %} #}
 
 			<h3>
 		{{ pimcore_input("pdfeditable") }}
@@ -110,7 +116,6 @@
 
 		I Agree:
 		{{ pimcore_checkbox('myCheckbox') }}
-
 		{# {{ pimcore_checkbox('myCheckbox') }}
 		
 		{% if pimcore_checkbox('myCheckbox').isChecked() %}
@@ -174,12 +179,12 @@
 							<strong>
 						Email:
 						</strong>
-					{{ bfields['email'].data }}
-					<strong>
+						{{ bfields['email'].data }}
+							<strong>
 						Location:
 						</strong>
-					{{ bfields['location'].data }}
-					<strong>
+						{{ bfields['location'].data }}
+							<strong>
 						Office:
 						</strong>
 					{{ bfields['office'].data }}
@@ -190,25 +195,7 @@
 			<p>Block not created</p>
 		{% endif %}
 
-		{# field collection #}
-		{# {% if challans is iterable %}
-		<ul>
-			{% for fields in challans %}
-			<br>
-			<li>
-				<strong>Title:</strong>
-				{{ fields['firstname'].data }}
-				<br>
-				<strong>Number:</strong>
-				{{ fields['lastname'].data }}
-				<strong>Email:</strong>
-				{{ fields['challandate'].data }}
-			</li>
-			{% endfor %}
-		</ul>
-		{% else %}
-		<p>Challan not found</p>
-		{% endif %} #}
+		
 		<h3>
 			{{ pimcore_input("field-collections") }}
 		</h3>
@@ -249,8 +236,6 @@
 		{% else %}
 			<p>Challan not found</p>
 		{% endif %}
-
-
 
 
 	{% endblock %}

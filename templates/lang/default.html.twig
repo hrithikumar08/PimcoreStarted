@@ -1,0 +1,18 @@
+{% extends 'trafficheader.html.twig' %}
+
+{% block body %}
+	{% block content %}
+
+		<p>Custom Codes</p>
+        {% for languageCode, languageData in langdata.localizedfields.items %}
+        <h2>{{ languageCode }}:</h2>
+        <div>{{ languageData.challanDescription|raw }}</div>
+    {% endfor %}
+        
+
+
+	{% endblock %}
+{% endblock %}
+
+
+
