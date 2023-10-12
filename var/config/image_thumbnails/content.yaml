@@ -16,11 +16,8 @@ pimcore:
                         preserveMetaData: false
                         rasterizeSVG: false
                         downloadable: false
-<<<<<<< HEAD
                         modificationDate: 1695897179
                         creationDate: 1695896705
-=======
-                        modificationDate: 1696357061
-                        creationDate: 1696357061
->>>>>>> 538ce99... object commit
+                        # modificationDate: 1696357061
+                        # creationDate: 1696357061
                         preserveAnimation: false

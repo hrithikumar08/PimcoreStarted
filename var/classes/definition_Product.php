@@ -1,24 +1,16 @@
 <?php
 
 /**
-<<<<<<< HEAD
- * Inheritance: no
- * Variants: no
-=======
  * Inheritance: yes
  * Variants: yes
->>>>>>> 1341aa1... Additonal Objects Commit
  *
  * Fields Summary:
  * - sku [input]
  * - name [input]
  * - description [wysiwyg]
  * - picture [image]
-<<<<<<< HEAD
-=======
  * - localizedfields [localizedfields]
  * -- firstA [input]
->>>>>>> 1341aa1... Additonal Objects Commit
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -28,15 +20,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-<<<<<<< HEAD
-<<<<<<< HEAD
    'modificationDate' => 1695892456,
-=======
    'modificationDate' => 1696855927,
->>>>>>> 1341aa1... Additonal Objects Commit
-=======
    'modificationDate' => 1697001988,
->>>>>>> 7200d17... With Assests and Translation
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -48,13 +34,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' => 
   array (
   ),
-<<<<<<< HEAD
+
    'allowInherit' => false,
    'allowVariants' => false,
-=======
    'allowInherit' => true,
    'allowVariants' => true,
->>>>>>> 1341aa1... Additonal Objects Commit
    'showVariants' => false,
    'layoutDefinitions' => 
   \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
@@ -192,8 +176,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
              'height' => '',
           )),
-<<<<<<< HEAD
-=======
+
+
           4 => 
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Iframe::__set_state(array(
              'name' => 'iframe',
@@ -285,7 +269,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelAlign' => 'left',
              'fieldDefinitionsCache' => NULL,
           )),
->>>>>>> 1341aa1... Additonal Objects Commit
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -313,16 +296,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'icon' => '',
    'group' => '',
    'showAppLoggerTab' => false,
-<<<<<<< HEAD
+
    'linkGeneratorReference' => '',
-<<<<<<< HEAD
+
    'previewGeneratorReference' => '',
-=======
-=======
+
+
    'linkGeneratorReference' => '@App\\Website\\LinkGenerator\\ProductLinkGenerator',
->>>>>>> 7200d17... With Assests and Translation
    'previewGeneratorReference' => '@App\\Service\\PreviewParamProvider\\ProductPreviewParamProvider',
->>>>>>> 1341aa1... Additonal Objects Commit
    'compositeIndices' => 
   array (
   ),

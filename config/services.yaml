@@ -1,10 +1,5 @@
 parameters:
-<<<<<<< HEAD
-    secret: kiEW47aLoF6/a99/g9pX4L6eCZdu0FqxGbptY3k4nxI=
-=======
     secret: ajGmQ1FDWvJJMvP/RYQb/48GEZd5oBMagmY6FBNCRq8=
->>>>>>> 538ce99... object commit
-
     # customize the full path to external executables
     # normally they are auto-detected by `which program` or auto-discovered in the configured path in
     # System Settings -> General -> Additional $PATH variable
