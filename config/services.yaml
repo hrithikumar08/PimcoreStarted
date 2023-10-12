@@ -1,6 +1,5 @@
 parameters:
-    secret: kiEW47aLoF6/a99/g9pX4L6eCZdu0FqxGbptY3k4nxI=
-
+    secret: ajGmQ1FDWvJJMvP/RYQb/48GEZd5oBMagmY6FBNCRq8=
     # customize the full path to external executables
     # normally they are auto-detected by `which program` or auto-discovered in the configured path in
     # System Settings -> General -> Additional $PATH variable
@@ -62,6 +61,15 @@ services:
 
 
     # Example custom templating helper
+    App\Helpers\CustomRenderer:
+        public: true
+    
+    App\Website\LinkGenerator\ProductLinkGenerator:
+        public: true
+
+    App\Service\PreviewParamProvider\ProductPreviewParamProvider:
+        public: true
+        
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they
     #     # are fetched from the container on demand

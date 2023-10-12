@@ -1,0 +1,21 @@
+pimcore:
+    assets:
+        video:
+            thumbnails:
+                definitions:
+                    test_video:
+                        items:
+                            -
+                                method: resize
+                                arguments:
+                                    width: 400
+                                    height: 200
+                                    displayfield-5757-inputEl: "<small style='color: red;'>width and height must be an even number</small>"
+                        medias: {  }
+                        name: test_video
+                        description: ''
+                        group: ''
+                        videoBitrate: 1
+                        audioBitrate: 1
+                        modificationDate: 1697029762
+                        creationDate: 1697000281

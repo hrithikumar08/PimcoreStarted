@@ -1,0 +1,14 @@
+pimcore_static_routes:
+    definitions:
+        3b5d0d94-f2e0-4f22-aa41-a4870f0a40c1:
+            name: BlrTrafficWebsite
+            pattern: /\/traffic/
+            reverse: /traffic/
+            controller: 'App\Controller\TrafficController::trafficAction'
+            variables: ''
+            defaults: ''
+            siteId: {  }
+            methods: {  }
+            priority: 1
+            creationDate: 1696363807
+            modificationDate: 1696363945
