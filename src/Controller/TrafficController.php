@@ -76,18 +76,6 @@ class TrafficController extends FrontendController
     #[Route('/apis')]
     public function traffiApi(Request $request): Response
     {
-        //  // The asset path you want to restrict access to
-        //  $restrictedAssetPath = "/Product/challan.png";
-
-        //  // Get the path of the requested URL
-        //  $requestPath = $request->getPathInfo();
- 
-        //  // Check if the requested path matches the restricted asset path
-        //  if ($requestPath === $restrictedAssetPath) {
-        //      // If it's a direct request to the restricted asset, throw an AccessDeniedHttpException.
-        //      throw new AccessDeniedHttpException('Access denied.');
-        //  }
-
         $blockdata = Blockclass::getById(5);
 
         // locking fields 
@@ -131,9 +119,6 @@ class TrafficController extends FrontendController
         //       $thumbnailUrls[] = $assetDoc->getImageThumbnail("image_transform", $i, true);
         //    }
         }
-         
-        
-
 
         // // Create a new object
         // $objectKey = 'customobject';

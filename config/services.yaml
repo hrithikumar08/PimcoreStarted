@@ -69,6 +69,20 @@ services:
 
     App\Service\PreviewParamProvider\ProductPreviewParamProvider:
         public: true
+
+    # App\EventListener\AdminStyleListener:
+    #     public: true
+
+    # App\EventListener\ProductEventListener:
+    #     tags:
+    #         - { name: kernel.event_listener }
+
+    # app.product_event_listener:
+    #     class:         
+        
+    # tags:
+    #   - { name: kernel.event_listener, event: pimcore.admin.resolve.elementAdminStyle, method: onResolveElementAdminStyle }    
+
         
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they
