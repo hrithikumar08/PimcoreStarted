@@ -1,0 +1,4 @@
+pimcore:
+    bundles:
+        ManualBundle:
+            all: true

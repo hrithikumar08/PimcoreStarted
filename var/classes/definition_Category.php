@@ -3,21 +3,18 @@
 /**
  * Inheritance: no
  * Variants: no
- * Title: Home
  *
  * Fields Summary:
- * - TestOne [input]
- * - TestTwo [input]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => 'home',
-   'name' => 'home',
-   'title' => 'Home',
+   'id' => 'category',
+   'name' => 'Category',
+   'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1697777666,
+   'modificationDate' => 1697709328,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -60,66 +57,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'datatype' => 'layout',
          'children' => 
         array (
-          0 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'TestOne',
-             'title' => 'Test One',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => true,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          1 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'TestTwo',
-             'title' => 'Test Two',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => true,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
