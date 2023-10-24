@@ -31,6 +31,7 @@
       "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
       "App\\Helpers\\": "src/Helpers/",
       "Codilar\\CustomBundle\\":"bundles/Codilar/CustomBundle/src",
+      "Codilar\\TrackingBundle\\":"bundles/Codilar/TrackingBundle/src",
       "App\\ManualBundle\\": "src/ManualBundle/"
       
     }

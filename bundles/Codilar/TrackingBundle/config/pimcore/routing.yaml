@@ -1,0 +1,6 @@
+codilar_tracking_homepage:
+    # path:     /codilar_tracking
+    resource: "@CodilarTrackingBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+    # defaults: { _controller: CodilarTrackingBundle\Controller\DefaultController:indexAction }

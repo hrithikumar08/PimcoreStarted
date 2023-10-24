@@ -1,0 +1,5 @@
+codilar_custom:
+    resource: "@CodilarCustomBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+

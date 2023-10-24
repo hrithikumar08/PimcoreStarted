@@ -13,7 +13,8 @@ return [
     Pimcore\Bundle\XliffBundle\PimcoreXliffBundle::class => ['all' => true],
     Pimcore\Bundle\BundleGeneratorBundle\PimcoreBundleGeneratorBundle::class => ['all'=> true],
     Codilar\CustomBundle\CodilarCustomBundle::class => ['all' => true],
-    // ManualBundle\Registration::class => ['all' => true],
+    Codilar\TrackingBundle\CodilarTrackingBundle::class => ['all' => true],
+        // ManualBundle\Registration::class => ['all' => true],
 
 
 ];

@@ -26,6 +26,7 @@ pimcore:
     bundles:
         search_paths:
             - bundles/Codilar/CustomBundle
+            - bundles/Codilar/TrackingBundle
 
 
 
