@@ -16,6 +16,18 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    Codilar\TrackingBundle\EventListener\CustomBackendLoggerListener:
+        arguments:
+            $logger: '@logger'
+        tags:
+            - { name: 'kernel.event_subscriber' }
+
+    # Codilar\TrackingBundle\EventListener\CustomBackendLoggerListener:
+    #     arguments:
+    #         $userResolver: '@Pimcore\Security\User\TokenStorageUserResolver'
+    #         $logger: '@Psr\Log\LoggerInterface'
+    #         $entityManager: '@Doctrine\ORM\EntityManagerInterface'
+
 # add more services, or override services that need manual wiring
 #    Codilar\TrackingBundle\ExampleClass:
 #        arguments:

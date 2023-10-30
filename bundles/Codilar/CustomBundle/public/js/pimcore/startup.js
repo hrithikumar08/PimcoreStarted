@@ -20,7 +20,7 @@ document.addEventListener(pimcore.events.postOpenObject, (e) => {
     if (e.detail.object.data.general.className === 'ProductStore') {
         e.detail.object.toolbar.add({
             text: t('Preview'),
-            iconCls: 'pimcore_icon_eye',
+            iconCls: 'pimcore_icon_pdf',
             scale: 'small',
             handler: function (obj) {
                 const productId = e.detail.object.id;

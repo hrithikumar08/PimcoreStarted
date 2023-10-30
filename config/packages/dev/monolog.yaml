@@ -1,0 +1,9 @@
+# monolog:
+#     handlers:
+#         custom_backend_activity:
+#             type: stream
+#             path: '/bundles/Codilar/TrackingBundle/logs/backend_activity.log'
+#             level: info
+#             channels: ['custom_backend_activity']
+
+            # %kernel.project_dir%
