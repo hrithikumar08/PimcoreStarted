@@ -52,7 +52,7 @@ class TrackingDetails extends AbstractModel
         } elseif (is_string($login)) {
             $this->login = new \DateTime($login);
         } else {
-            $this->login = null;
+            $this->login = '0000-00-00 00:00:00';
         }
     }
 
@@ -68,7 +68,7 @@ class TrackingDetails extends AbstractModel
         } elseif (is_string($logout)) {
             $this->logout = new \DateTime($logout);
         } else {
-            $this->logout = null;
+            $this->logout = '0000-00-00 00:00:00';
         }
     }
 

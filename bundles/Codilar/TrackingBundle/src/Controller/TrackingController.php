@@ -22,12 +22,8 @@ class TrackingController extends FrontendController
         $listing->setCondition('objectId =35');
         $listing->load();
         
-        // return $this->render('@CodilarTracking/view.html.twig',[
-        //     'list' => $listing
-        // ]);
-        
         $formattedData = [];
-
+        
         foreach ($listing as $item) {
             $formattedData[] = [
                 'userId' => $item->getUserId(),
@@ -39,19 +35,9 @@ class TrackingController extends FrontendController
         }
         
         return new JsonResponse(['list' => $formattedData]);
-
-
-        // var_dump($listing);
-
-        // $data = [
-        //     'list' => $listing,
-        // ];
-    
-        // return new JsonResponse($data);
-
-        // $data = $listing->getData(); // Assuming $listing contains the data you want
-
-        // return new JsonResponse(['list' => $data]);
-
+        
+        // return $this->render('@CodilarTracking/view.html.twig',[
+        //     'list' => $listing
+        // ]);
     }
 }

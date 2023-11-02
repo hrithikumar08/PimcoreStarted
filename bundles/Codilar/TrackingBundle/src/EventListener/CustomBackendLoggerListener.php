@@ -13,7 +13,7 @@ use Pimcore\Security\User\TokenStorageUserResolver;
 class CustomBackendLoggerListener implements EventSubscriberInterface
 {
     private $logger;
-    protected TokenStorageUserResolver $userResolver;
+    private TokenStorageUserResolver $userResolver;
 
     public function __construct(TokenStorageUserResolver $userResolver, LoggerInterface $logger)
     {
@@ -50,7 +50,7 @@ class CustomBackendLoggerListener implements EventSubscriberInterface
         }
     }
 
-    protected function logPimcoreBackendActivity(Request $request, $action, $logout, $login)
+    private function logPimcoreBackendActivity(Request $request, $action, $logout, $login)
     {
         $activityData = [
             'request_user' => (int) $request->getUser(),
@@ -65,43 +65,43 @@ class CustomBackendLoggerListener implements EventSubscriberInterface
         $trackingDetails = new TrackingDetails();
 
         $trackingDetails->setUserId($activityData['request_user']);
-        $loginTime = $activityData['login_time'] instanceof \DateTime ? $activityData['login_time'] : null;
+        $loginTime = $activityData['login_time'] instanceof \DateTime ? $activityData['login_time'] : '0000-00-00 00:00:00';
 
         $trackingDetails->setLogin($loginTime);
-        $trackingDetails->setLogout($activityData['logout'] instanceof \DateTime ? $activityData['logout'] : null);
+        $trackingDetails->setLogout($activityData['logout'] instanceof \DateTime ? $activityData['logout'] : '0000-00-00 00:00:00');
     
         $trackingDetails->setAction($activityData['action']);
         $trackingDetails->setObjectId($objectId);
     
-        $trackingDetails->save();
+        // $trackingDetails->save();
     
         $this->logger->info('Pimcore Backend Activity', $activityData);
 
     }
 
     
-    protected function loginTime(Request $request)
+    private function loginTime(Request $request)
     {
         
         $pathInfo = $request->getPathInfo();
         if (strpos($pathInfo, '/admin/login') !== false) {
             return new \DateTime();
         } else {
-            return null;
+            return '0000-00-00 00:00:00';
         }
     }
-    protected function logoutTime(Request $request)
+    private function logoutTime(Request $request)
     {
         
         $pathInfo = $request->getPathInfo();
         if (strpos($pathInfo, '/admin/logout') !== false) {
             return new \DateTime();
         } else {
-            return null;
+            return '0000-00-00 00:00:00';
         }
     }
     
-    protected function extractUserIdFromLogMessage(string $logMessage)
+    private function extractUserIdFromLogMessage(string $logMessage)
     {
         $matches = [];
         if (preg_match('/saveAction \[(\d+),/', $logMessage, $matches)) {
@@ -110,7 +110,7 @@ class CustomBackendLoggerListener implements EventSubscriberInterface
         return null;
     }
 
-    protected function extractObjectIdFromLogMessage(string $logMessage)
+    private function extractObjectIdFromLogMessage(string $logMessage)
     {
         $matches = [];
         if (preg_match('/"id":"(\d+)"/', $logMessage, $matches)) {
@@ -118,7 +118,7 @@ class CustomBackendLoggerListener implements EventSubscriberInterface
         }
         return null;
     }
-    protected function determineAction(Request $request)
+    private function determineAction(Request $request)
     {
         // Implement your logic to determine the action (document, asset, objects, classes).
         // You can check the request path, headers, or other criteria to determine this.
@@ -137,7 +137,7 @@ class CustomBackendLoggerListener implements EventSubscriberInterface
         }
     }
 
-    protected function determineObjectId(Request $request)
+    private function determineObjectId(Request $request)
     {
         // Implement your logic to determine the object ID.
         // You may extract it from the request path or other sources.
