@@ -1,0 +1,26 @@
+{% extends '@CodilarTracking/default.html.twig' %}
+
+{% block body %}
+	{% block content %}
+		{% if parsedData.pimcore.showdata.showdata == true %}
+        
+			{# Render the data when showdata is true #}
+			<p>Cname:
+				{{ parsedData.pimcore.general.cname }}</p>
+			<p>Cselect:
+				{{ parsedData.pimcore.general.cselect }}</p>
+			<p>Cnumber:
+				{{ parsedData.pimcore.general.cnumber }}</p>
+			<p>Feed:
+				{{ parsedData.pimcore.feedback.feed }}</p>
+			{# Add other fields as needed #}
+
+		{% else %}
+
+			{# Show a permission message when showdata is not true #}
+			<p>Permission not given.</p>
+
+		{% endif %}
+
+	{% endblock %}
+{% endblock %}

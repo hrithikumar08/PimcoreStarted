@@ -1,11 +1,14 @@
-general:
-    cname: hrithik
-    cselect: null
-    cnumber: null
-feedback:
-    feed: nice
-    rating1: false
-    rating2: false
-    rating3: false
-    rating4: true
-    rating5: false
+pimcore:
+    general:
+        cname: hrithik
+        cselect: c1
+        cnumber: 6306245297
+    feedback:
+        feed: nice
+        rating1: false
+        rating2: false
+        rating3: false
+        rating4: true
+        rating5: false
+    showdata:
+        showdata: true

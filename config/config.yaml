@@ -8,10 +8,10 @@ monolog:
             type: stream
             path: logs/custom/my_custom_log.txt
 
-        custom_backend_activity:
-            level: info
-            type: stream
-            path: '%kernel.project_dir%/bundles/Codilar/TrackingBundle/logs/backend_activity.log'
+        # custom_backend_activity:
+        #     level: info
+        #     type: stream
+        #     path: '%kernel.project_dir%/bundles/Codilar/TrackingBundle/logs/backend_activity.log'
 
 pimcore:
     models:

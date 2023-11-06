@@ -22,6 +22,11 @@ services:
         tags:
             - { name: 'kernel.event_subscriber' }
 
+    codilar.tracking.import_csv_command:
+        class: 'Codilar\TrackingBundle\Command\ImportCsvCommand'
+        tags:
+            - { name: console.command }
+
     # Codilar\TrackingBundle\EventListener\CustomBackendLoggerListener:
     #     arguments:
     #         $userResolver: '@Pimcore\Security\User\TokenStorageUserResolver'

@@ -28,20 +28,17 @@ pimcore.plugin.CodilarTrackingBundle = Class.create({
             var iconImage = document.createElement("img");
             iconImage.src = "/bundles/pimcoreadmin/img/flat-color-icons/settings.svg";
             newMenuItem1.appendChild(iconImage);
-            // newMenuItem1.onclick = function () {
-            //     alert("hello");
-            // };
 
             newMenuItem1.onclick = function () {
-                // Perform an AJAX request to load data from the YAML file
+                //  AJAX request to load data from the YAML file
                 Ext.Ajax.request({
-                    url: '/load-yaml-data', // Replace with the actual path to your YAML file
+                    url: '/load-yaml-data', 
                     success: function (response) {
                         var yamlData = response.responseText;
 
                         try {
                             var parsedData = JSON.parse(yamlData);
-                            // console.log(parsedData);
+                            console.log(parsedData);
 
                             const submenu = new Ext.menu.Menu({
                                 items: [{
@@ -70,7 +67,7 @@ pimcore.plugin.CodilarTrackingBundle = Class.create({
                                                             xtype: 'textfield',
                                                             fieldLabel: 'Name (Text)',
                                                             id: 'cname',
-                                                            value: parsedData.general.cname
+                                                            value: parsedData.pimcore.general.cname
                                                         },
                                                         {
                                                             xtype: 'combo',
@@ -90,13 +87,13 @@ pimcore.plugin.CodilarTrackingBundle = Class.create({
                                                             displayField: 'display',
                                                             valueField: 'value',
                                                             forceSelection: true,
-                                                            value: parsedData.general.cselect 
+                                                            value: parsedData.pimcore.general.cselect 
                                                         },
                                                         {
                                                             xtype: 'numberfield',
                                                             fieldLabel: 'Contact Number (Number)',
                                                             id: 'cnumber',
-                                                            value: parsedData.general.cnumber 
+                                                            value: parsedData.pimcore.general.cnumber 
                                                         }
                                                     ]
                                                 },
@@ -114,7 +111,7 @@ pimcore.plugin.CodilarTrackingBundle = Class.create({
                                                             xtype: 'textfield',
                                                             fieldLabel: 'Feedback (Text)',
                                                             id: 'feed',
-                                                            value: parsedData.feedback.feed
+                                                            value: parsedData.pimcore.feedback.feed
                                                         },
                                                         {
                                                             xtype: 'fieldcontainer',
@@ -126,33 +123,40 @@ pimcore.plugin.CodilarTrackingBundle = Class.create({
                                                                     boxLabel: '1',
                                                                     id: 'rating1',
                                                                     inputValue: '1',
-                                                                    checked: parsedData.feedback.rating1
+                                                                    checked: parsedData.pimcore.feedback.rating1
                                                                 },
                                                                 {
                                                                     boxLabel: '2',
                                                                     id: 'rating2',
                                                                     inputValue: '2',
-                                                                    checked: parsedData.feedback.rating2
+                                                                    checked: parsedData.pimcore.feedback.rating2
                                                                 },
                                                                 {
                                                                     boxLabel: '3',
                                                                     id: 'rating3',
                                                                     inputValue: '3',
-                                                                    checked: parsedData.feedback.rating3
+                                                                    checked: parsedData.pimcore.feedback.rating3
                                                                 },
                                                                 {
                                                                     boxLabel: '4',
                                                                     id: 'rating4',
                                                                     inputValue: '4',
-                                                                    checked: parsedData.feedback.rating4
+                                                                    checked: parsedData.pimcore.feedback.rating4
                                                                 },
                                                                 {
                                                                     boxLabel: '5',
                                                                     id: 'rating5',
                                                                     inputValue: '5',
-                                                                    checked: parsedData.feedback.rating5
+                                                                    checked: parsedData.pimcore.feedback.rating5
                                                                 }
                                                             ]
+                                                        },
+                                                        {
+                                                            xtype: 'checkbox',
+                                                            fieldLabel: 'Show Data',
+                                                            id: 'showdata',
+                                                            inputValue: '1',
+                                                            value: parsedData.pimcore.feedback.showdata
                                                         }
                                                     ]
                                                 }
@@ -166,13 +170,13 @@ pimcore.plugin.CodilarTrackingBundle = Class.create({
                                                         var cselect = Ext.getCmp('cselect').getValue();
                                                         var cnumber = Ext.getCmp('cnumber').getValue();
                                                         var feed = Ext.getCmp('feed').getValue();
-                                                        // var rating = Ext.getCmp('rating').getValue();
 
                                                         var rating1 = Ext.getCmp('rating1').getValue();
                                                         var rating2 = Ext.getCmp('rating2').getValue();
                                                         var rating3 = Ext.getCmp('rating3').getValue();
                                                         var rating4 = Ext.getCmp('rating4').getValue();
                                                         var rating5 = Ext.getCmp('rating5').getValue();
+                                                        var showdata = Ext.getCmp('showdata').getValue();
 
                                                         if(cname==null){
                                                             alert("Fill the name field");
@@ -189,24 +193,26 @@ pimcore.plugin.CodilarTrackingBundle = Class.create({
                                                             return false;
                                                         }
 
-                                                        // var ratings = Ext.ComponentQuery.query('checkbox[name=rating]');
-                                                        // var selectedRatings = ratings.filter(rating => rating.getValue());
-
                                                         const data = {
-                                                            general: {
-                                                                cname: cname,
-                                                                cselect: cselect,
-                                                                cnumber: cnumber,
-                                                            },
-                                                            feedback: {
-                                                                feed: feed,
-                                                                // rating: selectedRatings,
-                                                                rating1: rating1,
-                                                                rating2: rating2,
-                                                                rating3: rating3,
-                                                                rating4: rating4,
-                                                                rating5: rating5,
-                                                            },
+                                                            pimcore:{
+                                                                general: {
+                                                                    cname: cname,
+                                                                    cselect: cselect,
+                                                                    cnumber: cnumber,
+                                                                },
+                                                                feedback: {
+                                                                    feed: feed,
+                                                                    rating1: rating1,
+                                                                    rating2: rating2,
+                                                                    rating3: rating3,
+                                                                    rating4: rating4,
+                                                                    rating5: rating5,
+                                                                },
+                                                                showdata: {
+                                                                    showdata: showdata,
+                                                                },
+                                                            }
+
                                                         };
 
                                                         Ext.Ajax.request({
