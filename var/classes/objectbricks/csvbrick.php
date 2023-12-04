@@ -2,14 +2,13 @@
 
 /**
  * Fields Summary:
- * - firstname [firstname]
- * - lastname [lastname]
- * - hello [input]
+ * - name [input]
+ * - number [numeric]
  */
 
-return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
+return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'dao' => NULL,
-   'key' => 'csvtest',
+   'key' => 'csvbrick',
    'parentClass' => '',
    'implementsInterfaces' => '',
    'title' => '',
@@ -30,7 +29,7 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
     array (
       0 => 
       \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'name' => 'Form',
+         'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
          'title' => '',
@@ -43,9 +42,9 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'children' => 
         array (
           0 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Firstname::__set_state(array(
-             'name' => 'firstname',
-             'title' => 'Firstname',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'name',
+             'title' => 'Name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -73,9 +72,9 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Lastname::__set_state(array(
-             'name' => 'lastname',
-             'title' => 'Lastname',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'number',
+             'title' => 'Number',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -92,43 +91,13 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
             array (
             ),
              'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
              'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          2 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'hello',
-             'title' => 'Hello',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'width' => '',
              'defaultValueGenerator' => '',
           )),
@@ -158,6 +127,12 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
   )),
    'fieldDefinitionsCache' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'classDefinitions' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

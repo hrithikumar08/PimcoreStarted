@@ -14,7 +14,7 @@ return [
     Pimcore\Bundle\BundleGeneratorBundle\PimcoreBundleGeneratorBundle::class => ['all'=> true],
     Codilar\CustomBundle\CodilarCustomBundle::class => ['all' => true],
     Codilar\TrackingBundle\CodilarTrackingBundle::class => ['all' => true],
-        // ManualBundle\Registration::class => ['all' => true],
-
+    Codilar\MagentoConnectorBundle\CodilarMagentoConnectorBundle::class => ['all' => true],
+    Codilar\UserBundle\CodilarUserBundle::class => ['all' => true],
 
 ];

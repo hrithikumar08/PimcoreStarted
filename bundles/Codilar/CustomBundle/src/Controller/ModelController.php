@@ -18,10 +18,10 @@ class ModelController extends AbstractController
     {
         
         // Create an instance of the Vote model
-        // $vote = new Vote();
-        // $vote->setScore(51);
-        // $vote->setUsername('Baki');
-        // $vote->save();
+        $vote = new Vote();
+        $vote->setScore(51);
+        $vote->setUsername('Baki');
+        $vote->save();
 
         
         $listing = new Listing();

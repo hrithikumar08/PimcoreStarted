@@ -16,7 +16,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1697695687,
+   'modificationDate' => 1700462497,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -178,32 +178,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          2 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'name' => 'Relations',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => '',
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'children' => 
-            array (
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'panel',
-             'layout' => NULL,
-             'border' => false,
-             'icon' => '',
-             'labelWidth' => 100,
-             'labelAlign' => 'left',
-          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -258,109 +232,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
-    0 => 
-    \Pimcore\Model\DataObject\ClassDefinition\Data\Block::__set_state(array(
-       'name' => 'aa',
-       'title' => 'Aa',
-       'tooltip' => '',
-       'mandatory' => false,
-       'noteditable' => false,
-       'index' => false,
-       'locked' => false,
-       'style' => '',
-       'permissions' => NULL,
-       'fieldtype' => '',
-       'relationType' => false,
-       'invisible' => false,
-       'visibleGridView' => false,
-       'visibleSearch' => false,
-       'blockedVarsForExport' => 
-      array (
-      ),
-       'lazyLoading' => false,
-       'disallowAddRemove' => false,
-       'disallowReorder' => false,
-       'collapsible' => false,
-       'collapsed' => false,
-       'maxItems' => NULL,
-       'styleElement' => '',
-       'children' => 
-      array (
-        0 => 
-        \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-           'name' => 'cmc',
-           'title' => 'Cmc',
-           'tooltip' => '',
-           'mandatory' => false,
-           'noteditable' => false,
-           'index' => false,
-           'locked' => false,
-           'style' => '',
-           'permissions' => NULL,
-           'fieldtype' => '',
-           'relationType' => false,
-           'invisible' => false,
-           'visibleGridView' => false,
-           'visibleSearch' => false,
-           'blockedVarsForExport' => 
-          array (
-          ),
-           'defaultValue' => NULL,
-           'columnLength' => 190,
-           'regex' => '',
-           'regexFlags' => 
-          array (
-          ),
-           'unique' => false,
-           'showCharCount' => false,
-           'width' => '',
-           'defaultValueGenerator' => '',
-        )),
-        1 => 
-        \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-           'name' => 'dfdd',
-           'title' => 'Dfdd',
-           'tooltip' => '',
-           'mandatory' => false,
-           'noteditable' => false,
-           'index' => false,
-           'locked' => false,
-           'style' => '',
-           'permissions' => NULL,
-           'fieldtype' => '',
-           'relationType' => true,
-           'invisible' => false,
-           'visibleGridView' => false,
-           'visibleSearch' => false,
-           'blockedVarsForExport' => 
-          array (
-          ),
-           'classes' => 
-          array (
-          ),
-           'displayMode' => 'grid',
-           'pathFormatterClass' => '',
-           'assetInlineDownloadAllowed' => false,
-           'assetUploadPath' => '',
-           'allowToClearRelation' => true,
-           'objectsAllowed' => false,
-           'assetsAllowed' => false,
-           'assetTypes' => 
-          array (
-          ),
-           'documentsAllowed' => false,
-           'documentTypes' => 
-          array (
-          ),
-           'width' => '',
-        )),
-      ),
-       'layout' => NULL,
-       'referencedFields' => 
-      array (
-      ),
-       'fieldDefinitionsCache' => NULL,
-    )),
   ),
    'blockedVarsForExport' => 
   array (
