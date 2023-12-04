@@ -1,0 +1,61 @@
+{% extends '@CodilarCustom/default.html.twig' %}
+
+{% block body %}
+	{% block content %}
+		{# {{ dump(prod) }} #}
+		<div class="container">
+			<div class="row m-5">
+				<div class="col-md-6">
+					{# {{ prod.cothImage }} #}
+
+					<img src="{{ prod.cothImage }}" alt="Your Alt Text" style="width: -webkit-fill-available;">
+
+					{# {% set firstImage = prod.media.items[0] %}
+                    {% if firstImage is not null %}
+                        <img src="{{ firstImage.getUrl() }}" alt="{{ firstImage.filename|default('Product Image') }}" class="img-fluid" />
+                    {% else %}
+                        <img src="path-to-default-image.png" alt="Default Product Image" class="img-fluid" />
+                    {% endif %} #}
+
+					{# <img src="{{ prod.media|first.getUrl()|default('default-product-image.png') }}" alt="{{ prod.media|first.filename|default('Product Image') }}" class="img-fluid" /> #}
+					
+					{# <img src="{{ prod.media.first.getUrl() }}" alt="{{ prod.media.first.filename }}" class="img-fluid" /> #}
+					{# {% if firstMedia is not null %}
+						<img src="{{ firstMedia.getUrl() }}" alt="{{ firstMedia.filename }}" class="img-fluid" />
+					{% endif %} #}
+
+				</div>
+				<div class="col-md-6">
+					<h1>{{ prod.productTitle }}</h1>
+					{# <p>{{ prod.description }}</p> #}
+	
+					<ul class="list-group">
+						<li class="list-group-item">
+							<strong>SKU:</strong> {{ prod.sku }}
+						</li>
+						<li class="list-group-item">
+							<strong>Category:</strong>
+							{# {% for category in prod.categories %}
+								{{ category.name }}
+							{% endfor %} #}
+						</li>
+						<li class="list-group-item">
+							<strong>Size:</strong> {{ prod.size }}
+						</li>
+						<li class="list-group-item">
+							<strong>Color:</strong> {{ prod.color }}
+						</li>
+						{# <li class="list-group-item">
+							<strong>Price:</strong> {{ prod.price }}
+						</li> #}
+					</ul>
+	
+					<a href="#" class="btn btn-primary">Add to Cart</a>
+				</div>
+			</div>
+		</div>
+
+
+	{% endblock %}
+{% endblock %}
+

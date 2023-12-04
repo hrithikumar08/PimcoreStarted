@@ -1,0 +1,213 @@
+pimcore_custom_reports:
+    definitions:
+        SampleTest:
+            name: SampleTest
+            sql: ''
+            dataSourceConfig:
+                -
+                    sql: '*'
+                    from: object_1
+                    where: ''
+                    groupby: ''
+                    type: sql
+            columnConfiguration:
+                -
+                    name: oo_id
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-3
+                -
+                    name: oo_classId
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-4
+                -
+                    name: oo_className
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-5
+                -
+                    name: sku
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-6
+                -
+                    name: name
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-7
+                -
+                    name: description
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-8
+                -
+                    name: picture
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-9
+                -
+                    name: id
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-10
+                -
+                    name: parentId
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-11
+                -
+                    name: type
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-12
+                -
+                    name: key
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-13
+                -
+                    name: path
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-14
+                -
+                    name: index
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-15
+                -
+                    name: published
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-16
+                -
+                    name: creationDate
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-17
+                -
+                    name: modificationDate
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-18
+                -
+                    name: userOwner
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-19
+                -
+                    name: userModification
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-20
+                -
+                    name: classId
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-21
+                -
+                    name: className
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-22
+                -
+                    name: childrenSortBy
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-23
+                -
+                    name: childrenSortOrder
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-24
+                -
+                    name: versionCount
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel263-25
+            niceName: ''
+            group: ''
+            groupIconClass: ''
+            iconClass: ''
+            menuShortcut: true
+            reportClass: ''
+            chartType: pie
+            pieColumn: parentId
+            pieLabelColumn: parentId
+            xAxis: null
+            yAxis: {  }
+            modificationDate: 1697437243
+            creationDate: 1697196434
+            shareGlobally: true
+            sharedUserNames: {  }
+            sharedRoleNames: {  }

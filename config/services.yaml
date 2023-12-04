@@ -42,6 +42,7 @@ services:
     # CONTROLLERS
     #
 
+    # Doctrine\ORM\EntityManagerInterface: '@doctrine.orm.entity_manager'
     # auto-register all controllers as services
     App\Controller\:
         resource: '../src/Controller'
@@ -59,6 +60,11 @@ services:
         tags: [ 'console.command' ]
 
 
+    # Codilar\TrackingBundle\EventListener\CustomBackendLoggerListener:
+    #     arguments:
+    #         $userResolver: '@Pimcore\Security\User\TokenStorageUserResolver'
+    #         $logger: '@Psr\Log\LoggerInterface'
+    #         $entityManager: '@Doctrine\ORM\EntityManagerInterface'
 
     # Example custom templating helper
     App\Helpers\CustomRenderer:
@@ -69,6 +75,30 @@ services:
 
     App\Service\PreviewParamProvider\ProductPreviewParamProvider:
         public: true
+
+    # App\EventListener\AdminStyleListener:
+    #     public: true
+
+    # App\EventListener\ProductEventListener:
+    #     tags:
+    #         - { name: kernel.event_listener }
+
+    App\EventListener\TestListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.asset.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.document.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onPreUpdate }
+
+       
+    # app.product_event_listener:
+    #     class:         
+        
+    # tags:
+    #   - { name: kernel.event_listener, event: pimcore.admin.resolve.elementAdminStyle, method: onResolveElementAdminStyle }    
+    # services
+    App\Service\MyService:
+    # dependencies
+    App\DependencyInjection\MyExtension:
         
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they

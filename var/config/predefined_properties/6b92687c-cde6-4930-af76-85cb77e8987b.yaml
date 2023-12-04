@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                6b92687c-cde6-4930-af76-85cb77e8987b:
+                    name: Customss
+                    description: 'testing new property'
+                    key: new_key
+                    type: object
+                    data: ''
+                    config: ''
+                    ctype: document
+                    inheritable: false
+                    creationDate: 1697176114
+                    modificationDate: 1697176312

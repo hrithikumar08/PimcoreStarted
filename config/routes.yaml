@@ -4,3 +4,17 @@ _pimcore:
 app:
     resource: "../src/Controller/"
     type: annotation
+
+# codilar_custom_preview:
+#     path: /preview
+#     controller: CodilarCustomBundle\Controller\PreviewController::preAction
+
+
+# manual_bundle:
+#     resource: "@ManualBundle/Controller/DefaultController.php"
+#     type:     annotation    
+
+
+# manual_bundle_index:
+#     path:     /my-manual-bundle
+#     methods:  [GET]

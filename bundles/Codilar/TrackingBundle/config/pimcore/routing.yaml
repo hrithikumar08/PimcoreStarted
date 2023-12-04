@@ -1,0 +1,4 @@
+codilar_tracking_homepage:
+    resource: "@CodilarTrackingBundle/src/Controller/"
+    type:     annotation
+    prefix:   /

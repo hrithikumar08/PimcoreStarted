@@ -1,0 +1,5 @@
+codilar_magento_connector:
+    resource: "@CodilarMagentoConnectorBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+

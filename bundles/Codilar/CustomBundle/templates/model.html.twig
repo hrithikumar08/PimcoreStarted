@@ -1,0 +1,44 @@
+{% extends '@CodilarCustom/default.html.twig' %}
+
+{% block body %}
+	{% block content %}
+
+	<div class="container text-center">
+		<div class="box">
+			<div class="box-body">
+				<table class="table table-bordered">
+					<thead class="bg-primary text-white">
+						<tr>
+							<th>Vote ID</th>
+							<th>Vote Score</th>
+							<th>Vote UserName</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for vote in list %}
+						<tr>
+							<td>{{ vote.id }}</td>
+							<td>{{ vote.score }}</td>
+							<td>{{ vote.username }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+
+		{# {% for vote in list %}
+			<div class="vote">
+				<p>Vote ID:
+					{{ vote.id }}</p>
+				<p>Vote score:
+					{{ vote.score }}</p>
+				<p>Vote username:
+					{{ vote.username }}</p>
+			</div>
+		{% endfor %} #}
+
+	{% endblock %}
+{% endblock %}

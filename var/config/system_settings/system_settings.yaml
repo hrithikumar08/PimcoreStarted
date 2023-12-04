@@ -1,4 +1,15 @@
 pimcore:
+    config_location:
+        # admin_system_settings:
+        #     write_target:
+        #         type: 'settings-store'
+        #     read_target:
+        #         type: 'settings-store' 
+        system_settings:
+            write_target:
+                type: 'settings-store'
+            read_target:
+                type: 'settings-store'
     general:
         domain: ''
         redirect_to_maindomain: false
@@ -22,12 +33,13 @@ pimcore:
             localized:
                 en: ''
                 hi_IN: ''
+                kn_IN: ''
     objects:
         versions:
             days: null
-            steps: null
+            steps: 10
     assets:
         versions:
             days: null
-            steps: null
+            steps: 0
     email: {  }

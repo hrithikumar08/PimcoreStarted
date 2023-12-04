@@ -16,7 +16,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696582639,
+   'modificationDate' => 1700462497,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -166,32 +166,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'height' => NULL,
                  'width' => NULL,
               )),
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'panel',
-             'layout' => NULL,
-             'border' => false,
-             'icon' => '',
-             'labelWidth' => 100,
-             'labelAlign' => 'left',
-          )),
-          2 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'name' => 'Relations',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => '',
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'children' => 
-            array (
             ),
              'locked' => false,
              'blockedVarsForExport' => 

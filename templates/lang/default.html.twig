@@ -4,15 +4,41 @@
 	{% block content %}
 
 		<p>Custom Codes</p>
-        {% for languageCode, languageData in langdata.localizedfields.items %}
-        <h2>{{ languageCode }}:</h2>
-        <div>{{ languageData.challanDescription|raw }}</div>
-    {% endfor %}
-        
+		{% for languageCode, languageData in langdata.localizedfields.items %}
+			<h2>{{ languageCode }}:</h2>
+			<div>{{ languageData.challanDescription|raw }}</div>
+		{% endfor %}
+
+        <h2>{{ pimcore_input("sharedtrans") }}</h2>
+
+        {# {{ 'download'|trans({'sold_count': 0}) }} #}
+
+        {# {% trans %}This is a translated string{% endtrans %} #}
+
+        {# {{ 'download' | trans }} #}
+
+        {# {{ 'download' | trans({'locale': 'en,hi,kn'}) }} #}
+
+        {{ 'download' | trans({'locale': 'kn'}) }}
+        {# {{ 'download' | trans({'locale': 'hi_IN'}) }} #}
+
+        {# formatted services #}
+        <h2>{{ pimcore_input("formats") }}</h2>
+        <table class="table table-bodered">
+            <tr>
+                <th>Date</th>
+                <th>Number</th>
+                <th>Currency</th>
+            </tr>
+            <tr>
+                <td>{{ formattedDate }}</td>
+                <td>{{ formattedNumber }}</td>
+                <td>{{ formattedCurrency }}</td>
+            </tr>
+        </table>
+
+        {# {{ pimcore_website_config() }}                                                                                                                                                                                                                                                    #}
 
 
 	{% endblock %}
 {% endblock %}
-
-
-

@@ -1,8 +1,23 @@
 imports:
     - { resource: 'local/' }
 
+monolog:
+    handlers:
+        my_custom_logger:
+            level: debug
+            type: stream
+            path: logs/custom/my_custom_log.txt
+
+        # custom_backend_activity:
+        #     level: info
+        #     type: stream
+        #     path: '%kernel.project_dir%/bundles/Codilar/TrackingBundle/logs/backend_activity.log'
 
 pimcore:
+    models:
+        class_overrides:
+            'Pimcore\Model\DataObject\ChildNews': 'App\Model\DataObject\ChildNews'
+            'Pimcore\Model\DataObject\ParentNews': 'App\Model\DataObject\ParentNews'    
 
 # IMPORTANT Notice!
 # Following there are only some examples listed, for a full list of possible options, please run the following command:
@@ -11,6 +26,15 @@ pimcore:
 # ./bin/console debug:config pimcore assets
 # or even more specific:
 # ./bin/console debug:config pimcore assets.image
+    # general:
+    #     disable_usage_statistics: true
+
+# bundles
+    bundles:
+        search_paths:
+            - bundles/Codilar/CustomBundle
+            - bundles/Codilar/TrackingBundle
+
 
 
 #### TRANSLATIONS
@@ -133,4 +157,11 @@ framework:
 #     return:
 #         name: ''
 #         email: ''
+# pimcore_admin:
+#     path: '/admin-custom'
+#     controller: 'AdminController:defaultAction'
+
+doctrine_migrations:
+    migrations_paths:
+        'App\Migrations': '%kernel.project_dir%/src/Migrations'
 
